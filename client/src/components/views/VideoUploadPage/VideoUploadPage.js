@@ -7,11 +7,11 @@ import { useSelector } from "react-redux";
 const { Title } = Typography;
 const { TextArea } = Input;
 
-// select tag의 옵션을 객체 배열로 정의
 const Private = [
   { value: 0, label: "Private" },
   { value: 1, label: "Public" },
 ];
+
 const Catogory = [
   { value: 0, label: "Film & Animation" },
   { value: 0, label: "Autos & Vehicles" },
@@ -36,6 +36,8 @@ function UploadVideoPage(props) {
   };
 
   const handleChangeDecsription = (event) => {
+    console.log(event.currentTarget.value);
+
     setDescription(event.currentTarget.value);
   };
 
@@ -104,14 +106,14 @@ function UploadVideoPage(props) {
 
         //gerenate thumbnail with this filepath !
 
-        // axios.post("/api/video/thumbnail", variable).then((response) => {
-        //   if (response.data.success) {
-        //     setDuration(response.data.fileDuration);
-        //     setThumbnail(response.data.thumbsFilePath);
-        //   } else {
-        //     alert("Failed to make the thumbnails");
-        //   }
-        // });
+        axios.post("/api/video/thumbnail", variable).then((response) => {
+          if (response.data.success) {
+            setDuration(response.data.fileDuration);
+            setThumbnail(response.data.thumbsFilePath);
+          } else {
+            alert("Failed to make the thumbnails");
+          }
+        });
       } else {
         alert("failed to save the video in server");
       }
