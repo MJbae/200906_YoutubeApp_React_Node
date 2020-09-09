@@ -4,7 +4,7 @@ const multer = require("multer");
 const ffmpeg = require("fluent-ffmpeg");
 
 const { Video } = require("../models/Video");
-// const { Subscriber } = require("../models/Subscriber");
+const { Subscriber } = require("../models/Subscriber");
 
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
