@@ -5,11 +5,10 @@ import SideVideo from "./Sections/SideVideo";
 import Subscriber from "./Sections/Subscriber";
 import Comments from "./Sections/Comments";
 import LikeDislikes from "./Sections/LikeDislikes";
-
 function DetailVideoPage(props) {
+  const videoId = props.match.params.videoId;
   const [Video, setVideo] = useState([]);
   const [CommentLists, setCommentLists] = useState([]);
-  const videoId = props.match.params.videoId;
 
   const videoVariable = {
     videoId: videoId,
