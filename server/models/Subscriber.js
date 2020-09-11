@@ -1,20 +1,19 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const subscriberSchema = mongoose.Schema(
-  {
+const subscriberSchema = mongoose.Schema({
     userTo: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     },
-    userFrom: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-  },
-  { timestamps: true }
-);
+    userFrom : {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 
-const Subscriber = mongoose.model("Subscriber", subscriberSchema);
+}, { timestamps: true })
 
-module.exports = { Subscriber };
+
+const Subscriber = mongoose.model('Subscriber', subscriberSchema);
+
+module.exports = { Subscriber }
