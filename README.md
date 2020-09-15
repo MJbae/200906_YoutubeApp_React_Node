@@ -3,8 +3,7 @@
 * [프로젝트 정리](https://www.notion.so/Youtube-App-Project-9b91bb96162f4d58bc3adf3ded9d1038)
 
 ### 주요내용
-* The Movie DB(외부 API) 활용하여 웹서비스 개발
-* Favorite, Load More, Detail page 구현
+* 비디오 업로드, 구독, 댓글, 좋아요 등 Youtube 핵심기능 구현
 
 ### 기술스택
 * React, Redux, Nginx
